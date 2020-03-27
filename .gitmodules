@@ -1,0 +1,3 @@
+[submodule "igniter-shell-go"]
+	path = igniter-shell-go
+	url = git@github.com:Gameye/igniter-shell-go.git
