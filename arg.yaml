@@ -1,0 +1,9 @@
+port:
+  - name: game
+    protocol: udp
+  - name: query
+    protocol: udp
+arg:
+  - name: platform
+    type: string
+    defaultValue: "steam"

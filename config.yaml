@@ -1,0 +1,52 @@
+cmd:
+  - -Port=${port.game}
+  - -QueryPort=${port.query}
+
+script:
+  initialState: idle
+  states:
+    idle:
+      events:
+        - type: regex
+          pattern: ""
+          ignoreCase: true
+          nextState: configure
+        - type: timer
+          interval: 900000 # 15 minutes
+          nextState: end
+    configure:
+      events:
+        - type: literal
+          value: Configure ready...
+          nextState: idle
+    playing:
+      events:
+        - type: literal
+          value: Game will not start until both teams have players.
+          nextState: idle
+    end:
+      events:
+        - type: timer
+          interval: 60000 # 60 seconds
+          nextState: quit
+  transitions:
+    - to: configure
+      command: >
+        echo "Configure..."
+        echo "Configure ready..."
+    - to: idle
+      command: |
+        echo "Idle..."
+    - to: playing
+      command: |
+        echo "Playing..."
+    - to: end
+      command: |
+        echo "End..."
+    - to: quit
+      command: |
+        echo "Quit..."
+
+defaults:
+  port.game: ""
+  port.query: ""
