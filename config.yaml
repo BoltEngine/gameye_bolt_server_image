@@ -1,6 +1,12 @@
+defaults:
+  port.server: "60001"
+
 cmd:
-  - -Port=${port.game}
-  - -QueryPort=${port.query}
+  - -batchmode
+  - -nographics
+  - -logFile
+  - -port
+  - ${port.server}
 
 script:
   initialState: idle
@@ -46,7 +52,3 @@ script:
     - to: quit
       command: |
         echo "Quit..."
-
-defaults:
-  port.game: ""
-  port.query: ""
