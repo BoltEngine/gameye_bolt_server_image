@@ -30,7 +30,6 @@ Those variables can be useful at some point.
 ### Game Files
 
 - `GE_GAMEBIN`: Game binary file name. Default: `game.x86`.
-- `GE_DEFAULTGAMEARGS`: Default arguments to run the game binary. Default: `-batchmode -nographics -logFile`.
 
 ### Entrypoint Script
 
