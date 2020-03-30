@@ -39,5 +39,9 @@ Those variables can be useful at some point.
 
 1. Clone this repository into your machine.
 2. Copy your game executable into the `build` folder. If it does not exist, create one on the root folder.
+   1. The game build must be targetted to:
+      - Target Platform: `Linux`;
+      - Architecture: `x86`.
+   2. Game executable binary name: `game.x86`.
 3. Create the image:
    - `docker build -t <username>/<game name>:latest .`
