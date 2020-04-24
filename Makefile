@@ -1,7 +1,7 @@
 # Variables
 
-DOCKER_USERNAME = "docker_username"
-GAME_IMAGE_NAME = "game_image_name"
+DOCKER_USERNAME = "ramonmelo"
+GAME_IMAGE_NAME = "boltserver"
 VERSION = "latest"
 
 # Targets

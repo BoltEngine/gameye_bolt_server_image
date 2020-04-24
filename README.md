@@ -24,16 +24,11 @@ Those variables can be useful at some point.
 ### Igniter Files
 
 - `GE_IGNITERBIN`: Igniter binary file name. Default: `igniter-shell`.
-- `GE_CONFIGFILE`: Igniter configuration YAML file name. Default: `config.yaml`.
-- `GE_ARGFILE`: Igniter arg YAML file name. Default: `arg.yaml`.
+- `GE_CONFIGFILE`: Igniter configuration YAML file name. Default: `config/main.yaml`.
 
 ### Game Files
 
 - `GE_GAMEBIN`: Game binary file name. Default: `game.x86`.
-
-### Entrypoint Script
-
-- `GE_ENTRYPOINTSCRIPT`: Entrypoint script name. Default: `docker-entrypoint.sh`.
 
 ## How to build your own image
 
