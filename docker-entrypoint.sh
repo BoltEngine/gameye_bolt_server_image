@@ -6,6 +6,6 @@ shift
 set +e # restore erros
 
 echo "Config file: $CONFIG"
-echo "Game executable: $@"
+echo "Game executable: $GE_DIRGAME/$GE_GAMEBIN"
 
-exec igniter-shell launch --config-file $CONFIG -- $@
+exec igniter-shell launch --config-file $GE_DIRCONFIG/$CONFIG.yaml --emulate-tty "$@" -- $GE_DIRGAME/$GE_GAMEBIN
