@@ -1,8 +1,13 @@
+# Variables
 
+DOCKER_USERNAME = "docker_username"
+GAME_IMAGE_NAME = "game_image_name"
+
+# Targets
 all: build
 
 build: igniter-shell-go
-	docker build -t ramonmelo/boltserver:latest .
+	docker build -t $(DOCKER_USERNAME)/$(GAME_IMAGE_NAME):latest .
 	@echo "Done build"
 
 igniter-shell-go:
@@ -10,4 +15,7 @@ igniter-shell-go:
 	- $(MAKE) -C igniter-shell-go clean
 	- $(MAKE) -C igniter-shell-go build
 
-.PHONY: all build
+upload:
+	docker push $(DOCKER_USERNAME)/$(GAME_IMAGE_NAME):latest
+
+.PHONY: all build upload

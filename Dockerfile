@@ -42,5 +42,4 @@ RUN chmod +x ${GE_BINROOT}/docker-entrypoint.sh
 RUN ln -s ${GE_BINROOT}/docker-entrypoint.sh
 
 # Setup executable
-# ENTRYPOINT exec ${GE_ENTRYPOINTSCRIPT} ${GE_DIRCONFIG}/${GE_CONFIGFILE} ${GE_DIRGAME}/${GE_GAMEBIN}
 ENTRYPOINT ["docker-entrypoint.sh"]
