@@ -1,5 +1,11 @@
 defaults:
   port.server: "60001"
+  port.masterServer1: "5055"
+  port.masterServer2: "27001"
+  port.gameServer1: "5056"
+  port.gameServer2: "27002"
+  port.nameServer1: "5058"
+  port.nameServer2: "27000"
 
 cmd:
   - -batchmode

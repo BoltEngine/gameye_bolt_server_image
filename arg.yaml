@@ -1,8 +1,0 @@
-port:
-  - name: server
-    protocol: udp
-
-arg:
-  - name: map
-    type: string
-    defaultValue: "map1"

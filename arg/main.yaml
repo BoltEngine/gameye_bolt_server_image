@@ -1,0 +1,20 @@
+port:
+  - name: server
+    protocol: udp
+  - name: masterServer1
+    protocol: udp
+  - name: masterServer2
+    protocol: udp
+  - name: gameServer1
+    protocol: udp
+  - name: gameServer2
+    protocol: udp
+  - name: nameServer1
+    protocol: udp
+  - name: nameServer2
+    protocol: udp
+
+arg:
+  - name: map
+    type: string
+    defaultValue: "map1"
