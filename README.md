@@ -37,11 +37,18 @@ Those variables can be useful at some point.
 
 ## How to build your own image
 
+This repository contains all the necessary files to configure, build and run a `Bolt Game Server` using Docker, that can later be deployed to `Gameye` service.
+
+In order to get a working Docker image, follow the steps below:
+
 1. Clone this repository into your machine.
-2. Copy your game executable into the `build` folder. If it does not exist, create one on the root folder.
-   1. The game build must be targetted to:
-      - Target Platform: `Linux`;
-      - Architecture: `x86`.
-   2. Game executable binary name: `game.x86`.
-3. Create the image:
-   - `docker build -t <username>/<game name>:latest .`
+2. Build a standalone version of your game. We recommend that you use `Headless Sample` as base, so you can start a server in `batchmode`. This build must follow the rules:
+   1. Target Platform: `Linux`;
+   2. Architecture: `x86`;
+   3. Game executable binary name: `game.x86`. If you want to use other name, you need to rename the `GE_GAMEBIN` variable in the `Dockerfile` file.
+3. Copy your game executable into the `build` folder.
+4. Create the image:
+   1. You can use the `Makefile` included to build the image (make sure to change the variables `DOCKER_USERNAME` and `GAME_IMAGE_NAME`):
+      - `$ make build`.
+5. Upload the image to Docker Hub:
+   - `$ make upload`
