@@ -5,7 +5,7 @@ CONFIG=$1
 shift
 set +e # restore erros
 
-echo "Config file: $CONFIG"
+echo "Config file: $GE_DIRCONFIG/$CONFIG.yaml"
 echo "Game executable: $GE_DIRGAME/$GE_GAMEBIN"
 echo "Other arguments: $@"
 
