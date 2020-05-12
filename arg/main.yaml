@@ -1,6 +1,8 @@
 port:
   - name: server
     protocol: udp
+  - name: query
+    protocol: udp
   - name: masterServer1
     protocol: udp
   - name: masterServer2

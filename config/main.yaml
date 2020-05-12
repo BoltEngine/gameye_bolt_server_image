@@ -4,6 +4,8 @@ cmd:
   - -logFile
   - -port
   - ${port.server}
+  - -query
+  - ${port.query}
 
 script:
   initialState: idle
@@ -43,6 +45,7 @@ script:
 
 defaults:
   port.server: "60001"
+  port.query: "21777"
   port.masterServer1: "5055"
   port.masterServer2: "27001"
   port.gameServer1: "5056"
