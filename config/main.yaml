@@ -13,16 +13,37 @@ script:
     idle:
       events:
         - type: literal
-          pattern: STATE_CHANGE_TO_PLAY
-          ignoreCase: true
+          value: GAME_EYE_STATE_CHANGE_TO_CONFIG
+          nextState: config
+        - type: timer
+          interval: 120000 # 1000 * 60 * 2 = 2 minutes
+          nextState: end
+    config:
+      events:
+        - type: literal
+          value: GAME_EYE_STATE_CHANGE_TO_READY
+          nextState: ready
+        - type: literal
+          value: GAME_EYE_STATE_CHANGE_TO_END
+          nextState: end
+        - type: timer
+          interval: 120000 # 1000 * 60 * 2 = 2 minutes
+          nextState: end
+    ready:
+      events:
+        - type: literal
+          value: GAME_EYE_STATE_CHANGE_TO_PLAY
           nextState: playing
+        - type: literal
+          value: GAME_EYE_STATE_CHANGE_TO_END
+          nextState: end
         - type: timer
           interval: 900000 # 1000 * 60 * 15 = 15 minutes
           nextState: end
     playing:
       events:
         - type: literal
-          value: STATE_CHANGE_TO_END
+          value: GAME_EYE_STATE_CHANGE_TO_END
           nextState: end
     end:
       events:
@@ -32,16 +53,22 @@ script:
   transitions:
     - to: idle
       command: |
-        echo "Idle..."
+        echo "[IG] Change to Idle state"
+    - to: config
+      command: |
+        echo "[IG] Change to Config state"
+    - to: ready
+      command: |
+        echo "[IG] Change to Ready state"
     - to: playing
       command: |
-        echo "Playing..."
+        echo "[IG] Change to Playing state"
     - to: end
       command: |
-        echo "End..."
+        echo "[IG] Change to End state"
     - to: quit
       command: |
-        echo "Quit..."
+        echo "[IG] Change to Quit state"
 
 defaults:
   port.server: "60001"
