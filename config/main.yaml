@@ -14,6 +14,7 @@ script:
       events:
         - type: literal
           value: GAME_EYE_STATE_CHANGE_TO_CONFIG
+          ignoreCase: true
           nextState: config
         - type: timer
           interval: 120000 # 1000 * 60 * 2 = 2 minutes
@@ -22,9 +23,11 @@ script:
       events:
         - type: literal
           value: GAME_EYE_STATE_CHANGE_TO_READY
+          ignoreCase: true
           nextState: ready
         - type: literal
           value: GAME_EYE_STATE_CHANGE_TO_END
+          ignoreCase: true
           nextState: end
         - type: timer
           interval: 120000 # 1000 * 60 * 2 = 2 minutes
@@ -33,9 +36,11 @@ script:
       events:
         - type: literal
           value: GAME_EYE_STATE_CHANGE_TO_PLAY
+          ignoreCase: true
           nextState: playing
         - type: literal
           value: GAME_EYE_STATE_CHANGE_TO_END
+          ignoreCase: true
           nextState: end
         - type: timer
           interval: 900000 # 1000 * 60 * 15 = 15 minutes
@@ -44,6 +49,7 @@ script:
       events:
         - type: literal
           value: GAME_EYE_STATE_CHANGE_TO_END
+          ignoreCase: true
           nextState: end
     end:
       events:
