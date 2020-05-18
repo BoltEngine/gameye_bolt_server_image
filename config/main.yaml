@@ -13,7 +13,7 @@ script:
     idle:
       events:
         - type: literal
-          value: GAME_EYE_STATE_CHANGE_TO_CONFIG
+          value: GAMEYE STATE CHANGE CONFIG
           ignoreCase: true
           nextState: config
         - type: timer
@@ -22,11 +22,11 @@ script:
     config:
       events:
         - type: literal
-          value: GAME_EYE_STATE_CHANGE_TO_READY
+          value: GAMEYE STATE CHANGE READY
           ignoreCase: true
           nextState: ready
         - type: literal
-          value: GAME_EYE_STATE_CHANGE_TO_END
+          value: GAMEYE STATE CHANGE END
           ignoreCase: true
           nextState: end
         - type: timer
@@ -35,11 +35,11 @@ script:
     ready:
       events:
         - type: literal
-          value: GAME_EYE_STATE_CHANGE_TO_PLAY
+          value: GAMEYE STATE CHANGE PLAY
           ignoreCase: true
           nextState: playing
         - type: literal
-          value: GAME_EYE_STATE_CHANGE_TO_END
+          value: GAMEYE STATE CHANGE END
           ignoreCase: true
           nextState: end
         - type: timer
@@ -48,7 +48,7 @@ script:
     playing:
       events:
         - type: literal
-          value: GAME_EYE_STATE_CHANGE_TO_END
+          value: GAMEYE STATE CHANGE END
           ignoreCase: true
           nextState: end
     end:
@@ -57,24 +57,24 @@ script:
           interval: 60000 # 60 seconds
           nextState: quit
   transitions:
-    - to: idle
-      command: |
-        echo "[IG] Change to Idle state"
-    - to: config
-      command: |
-        echo "[IG] Change to Config state"
-    - to: ready
-      command: |
-        echo "[IG] Change to Ready state"
-    - to: playing
-      command: |
-        echo "[IG] Change to Playing state"
-    - to: end
-      command: |
-        echo "[IG] Change to End state"
-    - to: quit
-      command: |
-        echo "[IG] Change to Quit state"
+    - type: command
+      to: idle
+      command: echo "[IG] Change to Idle state"
+    - type: command
+      to: config
+      command: echo "[IG] Change to Config state"
+    - type: command
+      to: ready
+      command: echo "[IG] Change to Ready state"
+    - type: command
+      to: playing
+      command: echo "[IG] Change to Playing state"
+    - type: command
+      to: end
+      command: echo "[IG] Change to End state"
+    - type: command
+      to: quit
+      command: echo "[IG] Change to Quit state"
 
 defaults:
   port.server: "60001"
