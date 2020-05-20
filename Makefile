@@ -1,7 +1,7 @@
 # Variables
 
-DOCKER_USERNAME = "ramonmelo"
-GAME_IMAGE_NAME = "boltserver"
+DOCKER_USERNAME = ""
+GAME_IMAGE_NAME = ""
 VERSION = "latest"
 
 # Targets
