@@ -7,12 +7,16 @@ VERSION = "latest"
 # Targets
 all: build
 
-build: igniter-shell-go
+build: prepare 
 	docker build -t $(DOCKER_USERNAME)/$(GAME_IMAGE_NAME):$(VERSION) .
 	@echo "Done build"
 
-igniter-shell-go:
-	git clone git@github.com:Gameye/igniter-shell-go.git
+prepare: igniter-shell-go/bin
+	@echo "Done build Igniter"
+
+igniter-shell-go/bin:
+	git submodule init 
+	git submodule update
 	- $(MAKE) -C igniter-shell-go clean
 	- $(MAKE) -C igniter-shell-go build
 
