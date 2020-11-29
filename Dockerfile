@@ -38,4 +38,4 @@ RUN chmod +x ${GE_BINROOT}/docker-entrypoint.sh
 RUN ln -s ${GE_BINROOT}/docker-entrypoint.sh
 
 # Setup executable
-ENTRYPOINT ["docker-entrypoint.sh"]
+# ENTRYPOINT ["docker-entrypoint.sh"]
